@@ -40,7 +40,7 @@ To build the project from source:
 ## Latest Release
 **MyMandal v1.0.0**
 Android APK:
-[Download from GitHub Releases]
+[Download MyMandal_v1.0.0_debug.apk](https://github.com/Akashbodake8/MyMandalApp/raw/main/bin/MyMandal_v1.0.0_debug.apk)
 
 ---
 © 2026 MyMandal Team
