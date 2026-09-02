@@ -1,0 +1,249 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/receiptRoot"
+    android:layout_width="595pt"
+    android:layout_height="842pt"
+    android:background="#FFFFFF"
+    android:padding="25pt">
+
+    <!-- Professional Double Border -->
+    <View
+        android:id="@+id/vBorder"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/receipt_border_double"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!-- ================= HEADER (TOP 20%) ================= -->
+    <LinearLayout
+        android:id="@+id/headerGroup"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30pt"
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/ivGanapati"
+            android:layout_width="75pt"
+            android:layout_height="75pt"
+            android:contentDescription="@null"
+            android:scaleType="fitCenter"
+            android:src="@drawable/ic_ganapati" />
+
+        <TextView
+            android:id="@+id/tvMandalName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10pt"
+            android:text="MANDAL NAME"
+            android:textColor="#172033"
+            android:textSize="26pt"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tvLocation"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="2pt"
+            android:text="PUNE"
+            android:textColor="#667085"
+            android:textSize="13pt" />
+
+        <TextView
+            android:id="@+id/tvReceiptTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20pt"
+            android:letterSpacing="0.04"
+            android:text="DONATION RECEIPT"
+            android:textColor="#172033"
+            android:textSize="20pt"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+    <!-- ================= RECEIPT INFO ================= -->
+    <TextView
+        android:id="@+id/tvReceiptNumber"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="35pt"
+        android:layout_marginStart="15pt"
+        android:text="Receipt No: SSG-2026-0001"
+        android:textColor="#344054"
+        android:textSize="12pt"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/headerGroup" />
+
+    <TextView
+        android:id="@+id/tvReceiptDate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="35pt"
+        android:layout_marginEnd="15pt"
+        android:text="Date: 02/09/2026"
+        android:textColor="#344054"
+        android:textSize="12pt"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/headerGroup" />
+
+    <View
+        android:id="@+id/infoDivider"
+        android:layout_width="0dp"
+        android:layout_height="0.8pt"
+        android:layout_marginHorizontal="15pt"
+        android:layout_marginTop="10pt"
+        android:background="#D0D5DD"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvReceiptNumber" />
+
+    <!-- ================= MAIN DONATION CONTENT (MIDDLE 50%) ================= -->
+    <LinearLayout
+        android:id="@+id/mainContentGroup"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toTopOf="@id/footerDivider"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/infoDivider"
+        app:layout_constraintVertical_bias="0.45">
+
+        <TextView
+            android:id="@+id/tvReceivedThanks"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Received with thanks from"
+            android:textColor="#475467"
+            android:textSize="14pt" />
+
+        <TextView
+            android:id="@+id/tvDonorName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12pt"
+            android:gravity="center"
+            android:paddingHorizontal="20pt"
+            android:text="AKASH MANGESH BODAKE"
+            android:textColor="#172033"
+            android:textSize="24pt"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="18pt"
+            android:text="❖"
+            android:textColor="#B58A3A"
+            android:textSize="14pt" />
+
+        <TextView
+            android:id="@+id/tvAmount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15pt"
+            android:includeFontPadding="false"
+            android:text="₹1,500.00"
+            android:textColor="#172033"
+            android:textSize="40pt"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tvAmountInWords"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10pt"
+            android:gravity="center"
+            android:paddingHorizontal="30pt"
+            android:text="(Rupees One Thousand Five Hundred Only)"
+            android:textColor="#667085"
+            android:textSize="13pt"
+            android:textStyle="italic" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="18pt"
+            android:text="❖"
+            android:textColor="#B58A3A"
+            android:textSize="14pt" />
+
+        <TextView
+            android:id="@+id/tvPaymentMode"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15pt"
+            android:text="Payment Mode: UPI"
+            android:textColor="#344054"
+            android:textSize="14pt" />
+
+        <TextView
+            android:id="@+id/tvMobile"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="6pt"
+            android:text="Mobile: 9834367035"
+            android:textColor="#344054"
+            android:textSize="14pt" />
+    </LinearLayout>
+
+    <!-- ================= FOOTER (BOTTOM ZONE) ================= -->
+    <View
+        android:id="@+id/footerDivider"
+        android:layout_width="0dp"
+        android:layout_height="0.8pt"
+        android:layout_marginHorizontal="15pt"
+        android:layout_marginBottom="120pt"
+        android:background="#D0D5DD"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/tvTreasurerLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="15pt"
+        android:layout_marginTop="12pt"
+        android:text="Treasurer:"
+        android:textColor="#667085"
+        android:textSize="12pt"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/footerDivider" />
+
+    <TextView
+        android:id="@+id/tvTreasurerName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="15pt"
+        android:layout_marginTop="4pt"
+        android:text="AKASH B"
+        android:textColor="#172033"
+        android:textSize="15pt"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvTreasurerLabel" />
+
+    <ImageView
+        android:id="@+id/ivStamp"
+        android:layout_width="78pt"
+        android:layout_height="78pt"
+        android:layout_marginEnd="15pt"
+        android:layout_marginBottom="30pt"
+        android:contentDescription="Mandal stamp"
+        android:scaleType="fitCenter"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

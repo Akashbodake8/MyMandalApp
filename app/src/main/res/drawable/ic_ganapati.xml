@@ -1,0 +1,60 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="200dp"
+    android:height="200dp"
+    android:viewportWidth="100"
+    android:viewportHeight="100">
+
+    <!-- Face Background (Skin tone) -->
+    <path
+        android:fillColor="#FFDBAC"
+        android:pathData="M50,25 Q80,25 80,55 Q80,85 50,90 Q20,85 20,55 Q20,25 50,25" />
+
+    <!-- Large Ears -->
+    <path
+        android:fillColor="#FFDBAC"
+        android:pathData="M20,55 Q5,40 5,65 Q5,85 20,80" />
+    <path
+        android:fillColor="#FFDBAC"
+        android:pathData="M80,55 Q95,40 95,65 Q95,85 80,80" />
+
+    <!-- Crown (Gold) -->
+    <path
+        android:fillColor="#FFD700"
+        android:pathData="M30,30 Q50,-5 70,30 L75,35 Q50,15 25,35 Z" />
+    <path
+        android:fillColor="#FFA500"
+        android:pathData="M40,20 Q50,5 60,20" />
+
+    <!-- Trunk (Curved) -->
+    <path
+        android:fillColor="#FFDBAC"
+        android:pathData="M45,65 Q50,65 50,75 Q50,98 70,98 Q75,98 75,93 Q75,88 70,88 Q65,88 65,75 Q65,65 55,65" />
+
+    <!-- Tilak (Red) -->
+    <path
+        android:fillColor="#FF0000"
+        android:pathData="M50,30 L47,45 L50,50 L53,45 Z" />
+
+    <!-- Eyes (Black) -->
+    <path
+        android:fillColor="#000000"
+        android:pathData="M35,52 Q40,50 45,52" />
+    <path
+        android:fillColor="#000000"
+        android:pathData="M55,52 Q60,50 65,52" />
+
+    <!-- Details/Outlines -->
+    <path
+        android:strokeColor="#8B4513"
+        android:strokeWidth="0.8"
+        android:pathData="M45,65 Q50,65 50,75 Q50,98 70,98" />
+    <path
+        android:strokeColor="#8B4513"
+        android:strokeWidth="0.8"
+        android:pathData="M20,55 Q5,40 5,65" />
+    <path
+        android:strokeColor="#8B4513"
+        android:strokeWidth="0.8"
+        android:pathData="M80,55 Q95,40 95,65" />
+
+</vector>

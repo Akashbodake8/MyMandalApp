@@ -1,0 +1,49 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    // Mandal lookup: Publicly readable to check ID availability,
+    // but only writable (create only) by authenticated users during registration.
+    match /mandal_lookup/{mandalId} {
+      allow read: if true;
+      allow create: if request.auth != null;
+      allow update, delete: if false;
+    }
+
+    // Mandal Profiles and Data
+    match /mandals/{mandalId} {
+      // Allow read if user is the treasurer for this mandal.
+      // We removed the 'exists' check to ensure complete isolation.
+      allow read: if request.auth != null && (
+        resource == null || resource.data.treasurerUid == request.auth.uid
+      );
+
+      // Only allow creation if the user is authenticated and the lookup record doesn't exist
+      // (checked via application logic/batch, but here we just ensure auth)
+      allow create: if request.auth != null;
+
+      // Only the specific treasurer can update their profile.
+      allow update: if request.auth != null && resource.data.treasurerUid == request.auth.uid;
+
+      // Financial Years and Transactions:
+      // Fully isolated to the Treasurer of this specific Mandal.
+      match /years/{year} {
+        // Helper function to check ownership
+        function isMandalOwner() {
+          return request.auth != null &&
+            get(/databases/$(database)/documents/mandals/$(mandalId)).data.treasurerUid == request.auth.uid;
+        }
+
+        allow read, write: if isMandalOwner();
+
+        match /transactions/{txId} {
+          allow read, write: if isMandalOwner();
+        }
+
+        match /config/{configId} {
+          allow read, write: if isMandalOwner();
+        }
+      }
+    }
+  }
+}
